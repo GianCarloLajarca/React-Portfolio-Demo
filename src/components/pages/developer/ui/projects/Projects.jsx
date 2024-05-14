@@ -4,6 +4,7 @@ import SpinnerFetching from '../../../../partials/spinners/SpinnerFetching';
 import ModalProject from './ModalProject';
 import { StoreContext } from '../../../../../store/StoreContext';
 import { setIsShow } from '../../../../../store/StoreAction';
+import { devBaseImgUrl } from '../../../../helpers/functions-general';
 
 
 const Projects = () => {
@@ -38,7 +39,7 @@ const Projects = () => {
                     <div className='grid grid-cols-3 gap-5'>
                     {portfolio?.data.map((item, key) => (
                                 <div className="project_card" key={key}>
-                                        <img src="https://via.placeholder.com/300x300" alt="" className='w-full h-[300px] object-cover'/>
+                                        <img src={`${devBaseImgUrl}/${item.portfolio_photo}`} alt="" className='w-full h-[300px] object-cover'/>
                                         <h4 className='text-center pt-5 pb-2 mb-0'>{item.portfolio_title}</h4>
                                         <ul className='flex justify-between opacity-55 mb-10'>
                                             <li><small>{item.portfolio_category}</small></li>
