@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 20, 2024 at 07:56 AM
+-- Generation Time: May 20, 2024 at 09:29 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -74,7 +74,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_aid`, `user_is_active`, `user_name`, `user_email`, `user_key`, `user_password`, `user_created`, `user_datetime`) VALUES
-(3, 1, 'Gian Carlo Lajarca', 'gianlajarca14@gmail.com', '', '$2y$10$1AWy3VYh4zrfVGqJo1RDiOvzXy0hYsXjZmVr7Dv65K2IUd4G.fHl6', '2024-05-20 12:52:23', '2024-05-20 13:42:16');
+(3, 1, 'Gian Carlo Lajarca', 'gianlajarca14@gmail.com', '', '$2y$10$ItG3F63Bk1LN/mcMWkkebuV8cA4q3SwynntFLj4LPwCBMDk07hZr.', '2024-05-20 12:52:23', '2024-05-20 15:28:34');
 
 --
 -- Indexes for dumped tables

@@ -69,7 +69,7 @@ function getHtmlResetPassword(
           border: 1px solid #ddd;
         "
       >
-      <p style="margin-bottom: 20px">' '</p>
+
         <p style="margin-bottom: 20px">
           It looks like you need to reset your password using
           <strong>' . $email . '</strong> as account email address.
