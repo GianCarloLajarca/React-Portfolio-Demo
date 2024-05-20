@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2024 at 04:33 AM
+-- Generation Time: May 20, 2024 at 07:56 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -52,6 +52,30 @@ INSERT INTO `portfolio` (`portfolio_aid`, `portfolio_title`, `portfolio_category
 (17, 'WonderTour', 'Web Development', 'wqe', 1, 'Wondertour is wonderful', '13/05/2024', '2024-05-13 11:33:23', '2024-05-13 11:33:23'),
 (18, 'dlsl', 'wqeqw', 'dlsl-education.png', 1, 'ewqewq', 'sadsa', '2024-05-14 09:57:26', '2024-05-14 09:57:26');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `user_aid` int(11) NOT NULL,
+  `user_is_active` tinyint(1) NOT NULL,
+  `user_name` varchar(100) NOT NULL,
+  `user_email` varchar(50) NOT NULL,
+  `user_key` varchar(255) NOT NULL,
+  `user_password` varchar(255) NOT NULL,
+  `user_created` varchar(20) NOT NULL,
+  `user_datetime` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`user_aid`, `user_is_active`, `user_name`, `user_email`, `user_key`, `user_password`, `user_created`, `user_datetime`) VALUES
+(3, 1, 'Gian Carlo Lajarca', 'gianlajarca14@gmail.com', '', '$2y$10$1AWy3VYh4zrfVGqJo1RDiOvzXy0hYsXjZmVr7Dv65K2IUd4G.fHl6', '2024-05-20 12:52:23', '2024-05-20 13:42:16');
+
 --
 -- Indexes for dumped tables
 --
@@ -63,6 +87,12 @@ ALTER TABLE `portfolio`
   ADD PRIMARY KEY (`portfolio_aid`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`user_aid`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -71,6 +101,12 @@ ALTER TABLE `portfolio`
 --
 ALTER TABLE `portfolio`
   MODIFY `portfolio_aid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `user_aid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

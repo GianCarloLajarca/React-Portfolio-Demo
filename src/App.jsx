@@ -3,6 +3,10 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { StoreProvider } from "./store/StoreContext"
 import Portfolio from "./components/pages/developer/dashboard/portfolio/Portfolio"
 import Home from "./components/pages/developer/ui/Home"
+import Login from "./components/pages/developer/access/Login"
+import ForgotPassword from "./components/pages/developer/access/ForgotPassword"
+import CreatePassword from "./components/pages/developer/access/CreatePassword"
+import Users from "./components/pages/developer/dashboard/users/Users"
 
 
 function App() {
@@ -14,8 +18,13 @@ const queryClient = new QueryClient
         <Router>
             <Routes>
                 <Route path="/portfolio" element={<Portfolio/>}/>
+                <Route path="/users" element={<Users/>}/>
                 {/* UI */}
                 <Route path="/home" element={<Home/>}/>
+
+                <Route path="/login" element={<Login/>}/>
+                <Route path="/forgot-password" element={<ForgotPassword/>}/>
+                <Route path="/create-password" element={<CreatePassword/>}/>
             </Routes>
         </Router>
       </StoreProvider>

@@ -1,18 +1,17 @@
 import React from 'react'
-import Navigation from '../../../../partials/Navigation'
-import Header from '../../../../partials/Header'
-import { Link } from 'react-router-dom'
-import PortfolioTable from './PortfolioTable'
 import { FiPlus } from 'react-icons/fi'
-import ModalAddPortfolio from './ModalAddPortfolio'
-import useQueryData from '../../../../custom-hook/useQueryData'
 import { setIsAdd } from '../../../../../store/StoreAction'
 import { StoreContext } from '../../../../../store/StoreContext'
-import ModalError from '../../../../partials/modals/ModalError'
+import useQueryData from '../../../../custom-hook/useQueryData'
+import Header from '../../../../partials/Header'
+import Navigation from '../../../../partials/Navigation'
 import Toast from '../../../../partials/Toast'
+import ModalError from '../../../../partials/modals/ModalError'
+import ModalAddUser from './ModalAddUser'
+import UsersTable from './UsersTable'
 import Searchbar from '../../../../partials/Searchbar'
 
-const Portfolio = () => {
+const Users = () => {
 
     const {store, dispatch} = React.useContext(StoreContext);
     const [isSearch, setIsSearch] = React.useState(false);
@@ -23,11 +22,11 @@ const Portfolio = () => {
         isLoading,
         isFetching,
         error,
-        data: portfolio,
+        data: user,
       } = useQueryData(
-        isSearch ? "/v1/portfolio/search" : "/v1/portfolio", // endpoint
+        isSearch ? "/v1/user/search" : "/v1/user", // endpoint
         isSearch ? "post" : "get", // method
-        "portfolio", // key
+        "user", // key
         {
             searchValue: keyword
         }
@@ -46,7 +45,7 @@ const Portfolio = () => {
             <div className='flex'>
                 <div className={`main-wrapper px-4 transition-all py-3 sticky top-0 w-full`}>
                 <div className='flex justify-between items-center'>
-                    <h1>Portfolio Database</h1>
+                    <h1>User List</h1>
                     <Searchbar setIsSearch={setIsSearch} setKeyword={setKeyword}/>
                     
                 </div>
@@ -58,13 +57,13 @@ const Portfolio = () => {
                     </button>
                 </div>
 
-                <PortfolioTable isLoading={isLoading} portfolio={portfolio} isFetching={isFetching} setItemEdit={setItemEdit}/>
+                <UsersTable isLoading={isLoading} user={user} isFetching={isFetching} setItemEdit={setItemEdit}/>
             </div>
         </div>  
     </main>
 
 
-    {store.isAdd && <ModalAddPortfolio itemEdit={itemEdit}/>}
+    {store.isAdd && <ModalAddUser itemEdit={itemEdit}/>}
 
     {store.error && <ModalError position="center"/>}
     {store.success && <Toast/>}
@@ -73,4 +72,4 @@ const Portfolio = () => {
   )
 }
 
-export default Portfolio
+export default Users
